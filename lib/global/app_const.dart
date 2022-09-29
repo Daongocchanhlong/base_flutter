@@ -9,7 +9,7 @@ class AppConst {
   static const String langID = 'language_id';
   static const String keyLastLoginDT = 'keyLastLoginDT';
 
-  static const String langJP = 'ja';
+  static const String langVI = 'vi';
   static const String langEN = 'en';
 
   static const String keySizeSymbol = 'keySizeSymbol';

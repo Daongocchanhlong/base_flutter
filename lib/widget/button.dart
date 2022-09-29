@@ -62,7 +62,7 @@ class BaseButton extends BaseWidget<BaseController> {
         },
         child: Text(
           label ?? '',
-          style: textStyle.regular(
+          style: textStyle.medium(
               size: textSize ?? 16, color: colorText ?? color.white),
         ),
       ),

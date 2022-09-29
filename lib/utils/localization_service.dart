@@ -8,17 +8,17 @@ class LocalizationService extends Translations {
   static Locale get locale => _getLocaleFromLanguage();
 
   static List<Locale> locales = <Locale>[
-    const Locale(AppConst.langJP, ''),
+    const Locale(AppConst.langVI, ''),
     const Locale(AppConst.langEN, ''),
   ];
 
 // fallbackLocale là locale default nếu locale được set không nằm trong những Locale support
-  static const Locale fallbackLocale = Locale(AppConst.langJP);
+  static const Locale fallbackLocale = Locale(AppConst.langVI);
 
   @override
   Map<String, Map<String, String>> get keys => <String, Map<String, String>>{
         AppConst.langEN: Locales.en,
-        AppConst.langJP: Locales.jp
+        AppConst.langVI: Locales.vi
       };
 
   static Future<void> changeLocale(String langCode) async {
@@ -28,6 +28,6 @@ class LocalizationService extends Translations {
 
   static Locale _getLocaleFromLanguage() {
     final String? langCode = GetStorage().read<String?>(AppConst.langID);
-    return Locale(langCode ?? AppConst.langJP);
+    return Locale(langCode ?? AppConst.langVI);
   }
 }

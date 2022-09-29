@@ -59,15 +59,16 @@ class AppTextStyle {
       Color? backgroundColor,
       FontWeight? fontWeight,
       FontStyle? fontStyle,
+      TextDecoration? textDecoration,
       String fontFamily = 'Roboto-Regular'}) {
     return TextStyle(
-      fontFamily: fontFamily,
-      fontWeight: fontWeight,
-      fontStyle: fontStyle,
-      backgroundColor: backgroundColor,
-      fontSize: size ?? 12,
-      color: color ?? baseColor.black,
-    );
+        fontFamily: fontFamily,
+        fontWeight: fontWeight,
+        fontStyle: fontStyle,
+        backgroundColor: backgroundColor,
+        fontSize: size ?? 12,
+        color: color ?? baseColor.black,
+        decoration: textDecoration ?? TextDecoration.none);
   }
 
 // String getFontFamily(FontWeight? fontWeight) {

@@ -1,13 +1,13 @@
 import 'package:base_src/global/app_enum.dart';
 import 'package:base_src/global/app_path.dart';
 import 'package:base_src/import.dart';
-import 'package:base_src/page/login/login_ctrl.dart';
+import 'package:base_src/page/register/register_ctrl.dart';
 import 'package:base_src/widget/button.dart';
 import 'package:base_src/widget/check_box.dart';
 import 'package:base_src/widget/input_text.dart';
 
-class LoginPage extends BaseScreen<LoginCtrl> {
-  LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends BaseScreen<RegisterCtrl> {
+  RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget builder() => Scaffold(
@@ -15,7 +15,7 @@ class LoginPage extends BaseScreen<LoginCtrl> {
       );
 
   @override
-  LoginCtrl? putController() => LoginCtrl();
+  RegisterCtrl? putController() => RegisterCtrl();
 
   Widget _buildBody() => Container(
         height: 1.getHeight,
@@ -40,10 +40,10 @@ class LoginPage extends BaseScreen<LoginCtrl> {
               _buildLoginForm(),
               const SizedBox(height: 8),
               _buildSaveAndForgot(),
-              const SizedBox(height: 64),
+              const SizedBox(height: 56),
               BaseButton(
-                onPressed: () => controller.onPress(TypePress.login),
-                label: LocaleKeys.login_title.tr,
+                onPressed: () => controller.submitLogin(),
+                label: LocaleKeys.register_title.tr,
                 colorButton: color.yellowBgr,
                 colorText: color.green,
               ),
@@ -60,9 +60,9 @@ class LoginPage extends BaseScreen<LoginCtrl> {
                   ),
                   const SizedBox(width: 4),
                   InkWell(
-                    onTap: () => controller.onPress(TypePress.register),
+                    onTap: () {},
                     child: Text(
-                      LocaleKeys.register_title.tr,
+                      LocaleKeys.login_title.tr,
                       style: textStyle.custom(
                           size: 14,
                           color: color.green,
@@ -89,23 +89,12 @@ class LoginPage extends BaseScreen<LoginCtrl> {
         children: [
           Obx(() => BaseCheckBox(
                 value: controller.isSaveLogin.value,
-                label: LocaleKeys.login_saveLogin.tr,
+                label: 'Đồng ý với các điều khoản',
                 onChange: () => controller.isSaveLogin.value =
                     !controller.isSaveLogin.value,
                 type: TypeCheckBox.square,
                 size: 10,
               )),
-          InkWell(
-            onTap: () => controller.onPress(TypePress.forgotPass),
-            child: Text(
-              LocaleKeys.login_forgotPass.tr,
-              style: textStyle.custom(
-                  size: 14,
-                  color: color.green,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w600),
-            ),
-          )
         ],
       );
 
@@ -120,7 +109,14 @@ class LoginPage extends BaseScreen<LoginCtrl> {
                 controller.isHiddenPassword.value =
                     !controller.isHiddenPassword.value;
               })),
-          const SizedBox(height: 4),
+          const SizedBox(height: 8),
+          Obx(() => _buildText(
+                  LocaleKeys.register_password.tr, controller.txtRePass,
+                  icon: Icons.lock,
+                  isHidden: controller.isHiddenPassword.value, onHidden: () {
+                controller.isHiddenPassword.value =
+                    !controller.isHiddenPassword.value;
+              })),
         ],
       );
 

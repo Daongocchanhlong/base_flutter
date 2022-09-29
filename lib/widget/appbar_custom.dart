@@ -1,15 +1,15 @@
-import 'package:base_src/global/app_dimension.dart';
 import 'package:base_src/global/app_path.dart';
+import 'package:base_src/global/app_theme.dart';
 import 'package:base_src/import.dart';
 
 class _Widget with BaseMixin {
   Widget title(String? text) => Text(
         text ?? '',
-        style: textStyle.bold(size: 16.0),
+        style: textStyle.bold(size: 18.0, color: color.black),
       );
 
   Widget leading(String? title, Function? func) {
-    final bool isDisable = title != null && title != '';
+    final bool isDisable = title != null;
     if (title != null) {
       return InkWell(
         onTap: () {
@@ -50,11 +50,18 @@ class AppBarCustom extends AppBar {
     Widget? actionsWidget,
     Function? backFunction,
   }) : super(
-          key: key,
-          title: _Widget().title(textTitle),
-          leading: _Widget().leading(textLeading, backFunction),
-          leadingWidth:
-              leadingWidth ?? ((textLeading != null) ? 120.width : 80.width),
-          actions: <Widget>[actionsWidget ?? const SizedBox()],
-        );
+            key: key,
+            title: _Widget().title(textTitle),
+            leading: _Widget().leading(textLeading, backFunction),
+            leadingWidth:
+                leadingWidth ?? ((textLeading != null) ? 120.width : 80.width),
+            actions: <Widget>[actionsWidget ?? const SizedBox()],
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: <Color>[baseColor.yellowBgr, baseColor.orangeBgr]),
+              ),
+            ));
 }

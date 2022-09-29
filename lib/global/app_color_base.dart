@@ -10,4 +10,10 @@ abstract class AppColorBase {
   Color get transparent;
 
   Color get white;
+
+  Color get yellowBgr;
+
+  Color get orangeBgr;
+
+  Color get green;
 }

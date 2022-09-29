@@ -1,5 +1,3 @@
-import 'package:base_src/global/app_enum.dart';
-
 class EnumHelper {
   // static MessageTypeSocket getMessageTypeSocket(String? value) {
   //   switch (value) {

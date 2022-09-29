@@ -41,4 +41,13 @@ class AppThemeBlack extends AppTheme {
 
   @override
   Color get transparent => Colors.transparent;
+
+  @override
+  Color get yellowBgr => const Color(0xFFf2e836);
+
+  @override
+  Color get orangeBgr => const Color(0xFFfd5e2f);
+
+  @override
+  Color get green => const Color(0xFF006400);
 }

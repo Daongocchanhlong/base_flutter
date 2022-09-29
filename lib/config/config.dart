@@ -5,7 +5,7 @@ class Config extends BaseConfig {
   String get baseUrl => 'https://cheatpts-oyama.tk/api/v1/';
 
   @override
-  String get logo => 'assets/images/logo_fx.png';
+  String get logo => 'assets/images/logo.png';
 
   @override
   String get logoLogin => 'assets/images/logo_login_fx.png';

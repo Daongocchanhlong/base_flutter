@@ -2,13 +2,15 @@
   "appName": "Base_src",
   "login": {
     "userEmail": "Tên đăng nhập",
+    "password": "Mật khẩu",
     "saveLogin": "Lưu đăng nhập",
     "forgotPass": "Quên mật khẩu",
     "title": "Đăng nhập",
     "msgHaveAccount": "Chưa có tài khoản?"
   },
   "register": {
-    "title": "Đăng ký"
+    "title": "Đăng ký",
+    "password": "Nhập lại mật khẩu"
   },
   "home":{
     "title":"Trang chủ",
